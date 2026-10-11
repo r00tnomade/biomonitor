@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     currentPatient.measurements = NULL;
     currentPatient.measurementCount = 0;
 
-    // Check if a binary file path was passed via command-line arguments
+    // Check binary file path
     if (argc > 1) {
         printf("Startup config: Loading patient data from '%s'...\n", argv[1]);
         load_binary_measurements(argv[1], &currentPatient);
@@ -40,7 +40,6 @@ int main(int argc, char *argv[]) {
         while (getchar() != '\n');
 
         switch (choice) {
-            // Inside case 1 of your main menu:
             case 1: {
                 int id, age;
                 char name[50];
@@ -52,7 +51,6 @@ int main(int argc, char *argv[]) {
                 printf("Enter Name: ");
                 scanf("%49s", name);
 
-                // Call function from src/patient.c
                 init_patient(&currentPatient, id, name, age);
                 printf("Patient profile updated successfully!\n");
                 break;
