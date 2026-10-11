@@ -1,0 +1,12 @@
+# Compiled binary executable
+biomonitor
+
+# Object files
+*.o
+
+# Generated test output files
+patient_report.txt
+patient_data.bin
+
+# OS-specific files
+.DS_Store
