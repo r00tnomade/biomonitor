@@ -1,6 +1,6 @@
 # BioMonitor
 
-![BioMonitor Screenshot](assets/screenshot.png)
+![BioMonitor](assets/BIOTELEMETRY_IN_C.png)
 
 > A lightweight, modular C telemetry system designed to simulate and track patient health metrics (temperature, heart rate, and ECG). Built as a hands-on project to practice systems programming concepts in C.
 
