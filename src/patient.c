@@ -7,11 +7,10 @@ void init_patient(Patient *p, int id, const char *name, int age) {
     p->id = id;
     p->age = age;
 
-    // Safely copy the name string into the fixed-size array (preventing buffer overflows)
+    // Safely copy the name string into the fixed-size array
     strncpy(p->name, name, sizeof(p->name) - 1);
-    p->name[sizeof(p->name) - 1] = '\0'; // Ensure null-termination
+    p->name[sizeof(p->name) - 1] = '\0';
 
-    // Initialize pointers and counts safely
     p->measurements = NULL;
     p->measurementCount = 0;
 }

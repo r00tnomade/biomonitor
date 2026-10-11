@@ -3,7 +3,6 @@
 #include "../include/file_io.h"
 #include "../include/buffer.h"
 
-// 1. Formatted Text Logs (Updated to handle multiple sensor types)
 int save_text_report(const char *filename, const Patient *p, float mean, float std_dev) {
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
@@ -11,7 +10,7 @@ int save_text_report(const char *filename, const Patient *p, float mean, float s
         return 0;
     }
 
-    // Determine unit and sensor name string based on currentType
+    // Determine unit and sensor name string
     const char *sensorName;
     const char *unit;
     if (p->currentType == TEMP) {
@@ -52,7 +51,6 @@ int save_text_report(const char *filename, const Patient *p, float mean, float s
     return 1;
 }
 
-// 2. Direct Binary Files - Save (Now saves currentType)
 int save_binary_measurements(const char *filename, const Patient *p) {
     FILE *file = fopen(filename, "wb"); // 'wb' = write binary
     if (file == NULL) {
@@ -76,7 +74,6 @@ int save_binary_measurements(const char *filename, const Patient *p) {
     return 1;
 }
 
-// 3. Direct Binary Files - Load (Now reads currentType back)
 int load_binary_measurements(const char *filename, Patient *p) {
     FILE *file = fopen(filename, "rb"); // 'rb' = read binary
     if (file == NULL) {

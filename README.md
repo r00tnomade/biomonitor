@@ -1,4 +1,4 @@
-# BioMonitor
+# BioTelemetry
 
 ![BioMonitor](assets/BIOTELEMETRY_IN_C.png)
 

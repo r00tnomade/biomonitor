@@ -2,7 +2,6 @@
 #include <math.h>
 #include "../include/analytics.h"
 
-// Generic mean calculation supporting both floats and ints via union
 float calculate_mean(const Patient *p) {
     if (p->measurementCount <= 0 || p->measurements == NULL) {
         return 0.0f;
@@ -21,7 +20,7 @@ float calculate_mean(const Patient *p) {
     return sum / p->measurementCount;
 }
 
-// Standard deviation calculation supporting both types
+// Standard calculation supporting both types
 float calculate_std_dev(const Patient *p, float mean) {
     if (p->measurementCount <= 1 || p->measurements == NULL) {
         return 0.0f;
@@ -34,7 +33,7 @@ float calculate_std_dev(const Patient *p, float mean) {
                     (float)p->measurements[i].heartRate;
 
         float diff = val - mean;
-        variance_sum += (diff * diff); // Efficient squaring
+        variance_sum += (diff * diff);
     }
 
     float variance = variance_sum / p->measurementCount;
